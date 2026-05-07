@@ -1,0 +1,73 @@
+:root {
+  --bg: #f4f0ff;
+  --panel: #ffffff;
+  --primary: #6f4ef2;
+  --primary-dark: #5738ce;
+  --accent: #ff8ecf;
+  --text: #2a2140;
+  --muted: #726691;
+  --border: #e6dcff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #fbe8ff, var(--bg));
+}
+.app-shell {
+  min-height: 100vh;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 320px 1fr;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(111, 78, 242, 0.08);
+}
+.sidebar, .content { padding: 1rem; }
+.subtitle, .hint { color: var(--muted); margin-top: 0; }
+h1 { margin-top: 0; }
+h2, h3 { margin-bottom: .5rem; }
+.stack { display: grid; gap: .4rem; margin-bottom: .5rem; }
+input, textarea, button {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .65rem .75rem;
+  font: inherit;
+}
+textarea { min-height: 80px; }
+button {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+}
+button:hover { background: var(--primary-dark); }
+.list, .events { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.list-item, .event-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .55rem .7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+}
+.list-item.active { background: #f0e9ff; border-color: var(--primary); }
+.pill { font-size: .75rem; background: #fce7f5; padding: .2rem .5rem; border-radius: 999px; color: #8b1d62; }
+.grid { display: grid; gap: .5rem; grid-template-columns: 1fr 1fr; }
+.grid textarea, .grid button, .grid input:first-child { grid-column: 1 / -1; }
+.meta { color: var(--muted); font-size: .85rem; }
+.inline { display: inline-flex; align-items: center; gap: .35rem; }
+.tag { background: #ece5ff; color: #4b379d; border-radius: 999px; padding: .15rem .55rem; font-size: .76rem; }
+
+@media (max-width: 900px) {
+  .app-shell { grid-template-columns: 1fr; }
+}
