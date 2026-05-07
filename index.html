@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amistad Calendar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar card">
+        <h1>Amistad Calendar</h1>
+        <p class="subtitle">Organiza actividades y comparte con amigos</p>
+
+        <section>
+          <h2>Mis calendarios</h2>
+          <form id="calendar-form" class="stack">
+            <input id="calendar-name" type="text" placeholder="Nuevo calendario" required />
+            <button type="submit">Crear calendario</button>
+          </form>
+          <ul id="calendar-list" class="list"></ul>
+        </section>
+
+        <section>
+          <h2>Amistades</h2>
+          <form id="friend-form" class="stack">
+            <input id="friend-name" type="text" placeholder="Nombre del amigo" required />
+            <button type="submit">Añadir amigo</button>
+          </form>
+          <ul id="friend-list" class="list"></ul>
+        </section>
+      </aside>
+
+      <main class="content card">
+        <header class="content-header">
+          <div>
+            <h2 id="active-calendar-title">Selecciona un calendario</h2>
+            <p id="active-calendar-meta">Crea o elige uno para empezar.</p>
+          </div>
+        </header>
+
+        <section class="new-event">
+          <h3>Nueva actividad</h3>
+          <form id="event-form" class="grid">
+            <input id="event-title" type="text" placeholder="Actividad" required />
+            <input id="event-date" type="date" required />
+            <input id="event-time" type="time" required />
+            <textarea id="event-notes" placeholder="Notas"></textarea>
+            <button type="submit">Guardar actividad</button>
+          </form>
+        </section>
+
+        <section>
+          <h3>Actividades</h3>
+          <ul id="event-list" class="events"></ul>
+        </section>
+
+        <section>
+          <h3>Compartir calendario con amigos</h3>
+          <p class="hint">Activa a quién le compartes el calendario seleccionado.</p>
+          <ul id="share-list" class="list"></ul>
+        </section>
+
+        <section>
+          <h3>Calendarios compartidos conmigo</h3>
+          <ul id="shared-with-me" class="events"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
